@@ -8,6 +8,11 @@ const ChatFeed = (props) => {
 
   const chat = chats && chats[activeChat];
 
+  const logOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   const renderReadReceipts = (message, isMyMessage) => {
     return chat.people.map(
       (person, index) =>
@@ -63,6 +68,9 @@ const ChatFeed = (props) => {
   return (
     <div className="chat-feed">
       <div className="chat-title-container">
+        <div align="right" style={{ cursor: "pointer" }} onClick={logOut}>
+          LOG OUT
+        </div>
         <div className="chat-title">{chat?.title}</div>
         <div className="chat-subtitle">
           {chat.people.map((person) => `${person.person.username}`)}

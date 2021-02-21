@@ -204,6 +204,13 @@
   font-size: 14px;
 }
 
+.auth-tab {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  background-color: white;
+  cursor: pointer;
+}
+
 /* FORM STYLES */
 *,
 *::after,

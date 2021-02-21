@@ -3,16 +3,16 @@ import React from "react";
 import "./App.css";
 
 import ChatFeed from "./components/ChatFeed";
-import LoginForm from "./components/LoginForm";
+import Auth from "./components/Auth";
 
 const App = () => {
-  if (!localStorage.getItem("username")) return <LoginForm />;
+  if (!localStorage.getItem("username")) return <Auth />;
   return (
     <ChatEngine
       height="100vh"
       userName={localStorage.getItem("username")}
       userSecret={localStorage.getItem("password")}
-      projectID="1dc62041-b444-41a6-9e5d-8c26cdc5645f"
+      projectID={process.env.REACT_APP_PROJECTID}
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
     />
   );
